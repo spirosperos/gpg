@@ -44,8 +44,8 @@
 #include <pcl/features/integral_image_normal.h>
 #include <pcl/features/normal_3d_omp.h>
 #include <pcl/filters/random_sample.h>
-#include <pcl/search/kdtree.h>
-#include <pcl/search/impl/kdtree.hpp>
+#include <pcl/search/flann_search.h>
+#include <pcl/search/impl/flann_search.hpp>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
