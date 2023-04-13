@@ -1,4 +1,6 @@
 #include <gpg/cloud_camera.h>
+#include <set>
+#include <boost/lexical_cast.hpp>
 
 
 CloudCamera::CloudCamera()
