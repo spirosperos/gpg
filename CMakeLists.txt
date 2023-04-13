@@ -11,6 +11,8 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
+# Boost
+find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 ## Set compiler optimization flags
 set(CMAKE_CXX_FLAGS "-O3 -fopenmp -fPIC -Wno-deprecated -Wenum-compare")
 # set(CMAKE_CXX_FLAGS "-O3 -fopenmp -march=native -mfpmath=sse -funroll-loops -fPIC -Wno-deprecated -Wenum-compare") # no improvement
@@ -40,7 +42,8 @@ add_library(${PROJECT_NAME}_point_list src/${PROJECT_NAME}/point_list.cpp)
 add_executable(${PROJECT_NAME}_generate_candidates src/generate_candidates.cpp)
 target_link_libraries(${PROJECT_NAME}_generate_candidates 
                       ${PROJECT_NAME}_config_file 
-                      ${PROJECT_NAME}_grasp_candidates_generator)
+                      ${PROJECT_NAME}_grasp_candidates_generator
+                      ${Boost_LIBRARIES} ${Boost_THREAD_LIBRARY})
 
 # Linking for libraries
 target_link_libraries(${PROJECT_NAME}_antipodal 
