@@ -1,4 +1,5 @@
 #include <gpg/local_frame.h>
+#include <boost/lexical_cast.hpp>
 
 
 void LocalFrame::print()
